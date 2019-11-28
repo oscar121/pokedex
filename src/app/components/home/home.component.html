@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <form class="form-inline my-2 my-lg-0">
+      <input ngModel name="pokemon" #pokemonName="ngModel" (change)="searchPokemon(pokemonName)" class="form-control mr-sm-2" type="text" placeholder="Buscar...">
+    </form>
+  </div>
+</nav>
+<div class="jumbotron">
+    <h1 class="display-3">PokéDex</h1>
+    <div *ngIf='listpokemons'>
+      <img  src="{{listpokemons.image}}" alt="">
+      <span> #{{listpokemons.id}}</span>
+      <span style="text-transform: capitalize;">  {{listpokemons.name}}</span>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-info">
+      <p>
+        Hecho por Oscar Perdomo
+      </p>
+    </div>
+  </footer>
