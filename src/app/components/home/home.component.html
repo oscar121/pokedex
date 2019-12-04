@@ -7,14 +7,15 @@
     <form class="form-inline my-2 my-lg-0">
       <input ngModel name="pokemon" #pokemonName="ngModel" (change)="searchPokemon(pokemonName)" class="form-control mr-sm-2" type="text" placeholder="Buscar...">
     </form>
+    <span style="color: grey;">Presione "Enter" para buscar.</span>
   </div>
 </nav>
 <div class="jumbotron">
     <h1 class="display-3">PokéDex</h1>
-    <div *ngIf='listpokemons'>
-      <img  src="{{listpokemons.image}}" alt="">
-      <span> #{{listpokemons.id}}</span>
-      <span style="text-transform: capitalize;">  {{listpokemons.name}}</span>
+    <div *ngFor="let pok of empList">
+      <img  src="{{pok.image}}" alt="">
+      <span> #{{pok.id}}</span>
+      <span style="text-transform: capitalize;">  {{pok.name}}</span>
     </div>
 </div>
 <footer class="footer">
